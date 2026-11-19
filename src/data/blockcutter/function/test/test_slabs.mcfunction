@@ -1,15 +1,18 @@
 import json
+from pathlib import Path
 
-stairs = []
-with open(f'tags/slabs/slabs.json') as file:
-    data = json.load(file)
-    stairs.extend(data["values"])
+import yaml
 
-stairs.pop(0)  # Remove the first entry which is not a stair
+with open("release.yml", encoding="utf-8") as file:
+    version = yaml.safe_load(file)["minecraft_version"]
 
-with open(f'tags/slabs/wooden_slabs.json') as file:
-    data = json.load(file)
-    stairs.extend(data["values"])
+recipe_directory = Path("versions") / str(version) / "recipe"
+slabs = set()
+for recipe_path in recipe_directory.glob("*.json"):
+    with recipe_path.open(encoding="utf-8") as file:
+        output = json.load(file).get("result", {}).get("id", "")
+    if output.endswith("_slab"):
+        slabs.add(output)
 
-for i, stair in enumerate(stairs):
-    summon minecraft:item ~ ~2 ~ {Item:{id:stairs[i],count:2}}
+for slab in sorted(slabs):
+    summon minecraft:item ~ ~2 ~ {Item:{id:slab,count:2}}
