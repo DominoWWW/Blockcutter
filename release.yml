@@ -1,0 +1,10 @@
+Name: Blockcutter
+version: 1.2.0
+minecraft_version: 26.3
+notes: |
+  - Added support for new wall types: resin brick, cinnabar, cinnabar brick, sulfur, and sulfur brick.
+  - Change the recipe for stairs and walls.
+  - Added recipe unlocking. 
+  - Updated testing.
+  - Updated beet to be more maintainable.
+  - Updated pipeline to be more streamlined.  
