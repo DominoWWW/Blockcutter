@@ -1,6 +1,6 @@
 {
     "type": "block_based",  
-    "structure": "blockcutter:walls_to_blocks",
+    "structure": "blockcutter:test/walls_to_blocks",
     "environment": "blockcutter:tick_sprint",
     "max_ticks": 2400
 }
