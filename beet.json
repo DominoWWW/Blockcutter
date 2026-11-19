@@ -1,19 +1,17 @@
 {
     "name": "Blockcutter",
     "author": "DominoWWW",
-    "version": "1.1",
+    "version": "1.2",
     "require": [
         "bolt"
     ],
     "data_pack": {
-        "name": "Blockcutter_v1.1",
-        "description": [{"text":"Convert all blocks with stairs and slab, back to blocks.","color":"gold"},{"text":"\nby DominoWWW","italic":true,"color":"yellow"}],
-        "min_format": [88],
-        "max_format": [94, 1],
-        "pack_format": 81,
-        "supported_formats": [48, 57, 61, 71, 80, 81],
+        "name": "Blockcutter v1.2",
+    "description": [{"text":"Convert all blocks to walls, stairs and slab with a stonecutter, back to blocks.","color":"gold"},{"text":"\nby DominoWWW","italic":true,"color":"yellow"}],
+        "min_format": [121, 0],
+        "max_format": [121, 0],
 
-        "zipped": true,
+        "zipped": false,
         "load": ["src"]
     },
     "pipeline": ["mecha", "modules.recipes.create_recipes"],
